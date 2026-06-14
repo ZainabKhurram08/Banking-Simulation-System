@@ -29,21 +29,21 @@ Each customer is spawned as a **POSIX pthread**. Threads run concurrently simula
 - Regular and Premium customers perform deposits; VIP and Corporate customers perform withdrawals
 - All transactions logged to `race_condition_log.txt` as proof of synchronization
 
-### 4. 🧠 Deadlock Prevention — Banker's Algorithm
+### 4. 🧠 Deadlock Prevention : Banker's Algorithm
 Implements the full **Banker's Algorithm** with 3 resource types:
 - Maintains `allocation`, `maximum`, `need`, and `available` matrices
 - Runs a **safety check** to find a safe sequence before granting any resource request
 - Supports `request_resources()` and `release_resources()` with safe/unsafe state detection
 - Test cases demonstrate both safe grants and rejected unsafe requests
 
-### 5. 📨 IPC — Inter-Process Communication
+### 5. 📨 IPC : Inter-Process Communication
 Pipe-based message passing between customer threads and a bank server:
 - **Request format:** `{ customer_id, account_id, operation, amount, priority }`
 - **Response format:** `{ customer_id, account_id, status, new_balance }`
 - Supports `DEPOSIT`, `WITHDRAW`, and `LOAN_REQUEST` operations
 - All communication logged to `ipc_log.txt`
 
-### 6. 💾 Memory Management — Page Replacement
+### 6. 💾 Memory Management : Page Replacement
 Simulates virtual memory with a 20-page reference string and 4 frames:
 - **FIFO** — First In First Out page replacement
 - **LRU** — Least Recently Used page replacement
