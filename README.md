@@ -45,8 +45,8 @@ Pipe-based message passing between customer threads and a bank server:
 
 ### 6. 💾 Memory Management : Page Replacement
 Simulates virtual memory with a 20-page reference string and 4 frames:
-- **FIFO** — First In First Out page replacement
-- **LRU** — Least Recently Used page replacement
+- **FIFO**  First In First Out page replacement
+- **LRU**  Least Recently Used page replacement
 - Compares both algorithms on page faults, page hits, and fault rate
 - Results logged to `page_fault_log.txt`
 
